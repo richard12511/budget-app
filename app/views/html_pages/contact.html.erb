@@ -1,0 +1,15 @@
+<%= provide :title, "Contact" %>
+
+<head>
+    <title><%= yield(:title)%></title>
+</head>
+
+<div class="center jumbotron">
+    <h1>Contact us</h1>
+    <h2>
+        This is the contact page of the orbit application.
+        <a href="https://github.com/tstaunton/orbit001">My Github Account.</a>
+    </h2>
+
+    <%= link_to "Create an account", '#', class: "btn btn-lg btn-primary"%>
+</div>

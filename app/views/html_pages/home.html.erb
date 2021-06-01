@@ -1,0 +1,15 @@
+<%= provide :title, "Home" %>
+
+<head>
+    <title><%= yield(:title)%></title>
+</head>
+
+<div class="center jumbotron">
+    <h1>Welcome to Bottom Line Budget</h1>
+    <h2>
+        This is the homepage of the budget application.
+        <a href="https://github.com/richard12511/budget-app">My Github Account.</a>
+    </h2>
+
+    <%= link_to "Create an account", '#', class: "btn btn-lg btn-primary"%>
+</div>
