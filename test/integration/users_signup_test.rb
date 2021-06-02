@@ -20,4 +20,16 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to(controller: "users", action: "show", id: user.id)
   end
+
+  test "valid signup info" do
+    get signup_path
+    assert_difference('User.count', 1) do
+      post users_path, params: {user: { name: "Frank", email: "frank@example.com", password: "password123", password_confirmation: "password123"}}
+    end
+
+    user = User.find_by(email: "frank@example.com")
+
+    follow_redirect!
+    assert_template 'users/show'
+  end
 end
