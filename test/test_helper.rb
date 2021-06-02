@@ -11,4 +11,11 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  require "minitest/reporters"
+  Minitest::Reporters.use!
+
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
 end
