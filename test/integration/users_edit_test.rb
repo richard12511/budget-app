@@ -18,7 +18,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     name = "Ted"
     email = "ted@example.com"
     # patch user_path(@user), params: { user: { name: name, email: email, password: "password123" password_confirmation: "password123"}}
-    patch user_path @user, params: { user: {name: name, email: email, password: "password123", password_confirmation: "password123"}}
+    patch user_path @user, params: { user: {name: name, email: email, password: "", password_confirmation: ""}}
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload
