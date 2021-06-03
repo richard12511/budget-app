@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(name: "Test User", email: "test@testuser.com", password: "password123", password_confirmation: "password123", admin: true)
+User.create!(name: "Test User", email: "test@testuser.com", password: "password123", password_confirmation: "password123")
 
 # Bulk generate test users
 99.times do |n|
