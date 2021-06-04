@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :debits
   root 'html_pages#home'
 
   get '/help', to: 'html_pages#help'
