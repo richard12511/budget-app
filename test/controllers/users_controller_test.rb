@@ -30,13 +30,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should redirect edit when logged in as the wrong user" do
-    log_in_as(@other_user)
+    login_as(@other_user)
     get edit_user_path(@user)
     assert_redirected_to root_url
   end
 
   test "should redirect update when logged in as the wrong user" do
-    log_in_as(@other_user)
+    login_as(@other_user)
     patch user_path(@user), params: { user: {name: @user.name, email: @user.email}}
     assert_redirected_to root_url
   end
@@ -49,7 +49,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should redirect destroy when logged in as non-admin" do
-    log_in_as(@other_user)
+    login_as(@other_user)
     assert_no_difference 'User.count' do
       delete user_path(@user)
     end

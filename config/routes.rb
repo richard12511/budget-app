@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :debits
   end
 
+  resources :debits
+
   get '/users/:id/home', to: 'users#home', as: "home"
 
 end

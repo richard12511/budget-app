@@ -8,7 +8,6 @@ class DebitsController < ApplicationController
 
   # GET /debits/1 or /debits/1.json
   def show
-    byebug
   end
 
   # GET /debits/new
@@ -26,7 +25,8 @@ class DebitsController < ApplicationController
 
     respond_to do |format|
       if @debit.save
-        format.html { redirect_to @debit, notice: "Debit was successfully created." }
+
+        format.html { redirect_to user_debit_url(@debit.user, @debit), notice: "Debit was successfully created." }
         format.json { render :show, status: :created, location: @debit }
       else
         format.html { render :new, status: :unprocessable_entity }
