@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :debits
   root 'html_pages#home'
 
   get '/help', to: 'html_pages#help'
@@ -9,5 +8,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  resources :users
+  resources :users do
+    resources :debits
+  end
+
+  get '/users/:id/home', to: 'users#home', as: "home"
+
 end

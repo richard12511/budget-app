@@ -5,11 +5,11 @@ one:
   currency: USD
   remarks: One Time
   amount: 9.99
-  user: one
+  user: tony
 
 two:
   frequency: Euro
   currency: One Time
   remarks: test
   amount: 9.99
-  user: two
+  user: tony

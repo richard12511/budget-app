@@ -8,6 +8,7 @@ class DebitsController < ApplicationController
 
   # GET /debits/1 or /debits/1.json
   def show
+    byebug
   end
 
   # GET /debits/new

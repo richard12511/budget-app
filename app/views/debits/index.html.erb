@@ -3,33 +3,33 @@
 <h1>Debits</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Frequency</th>
-      <th>Currency</th>
-      <th>Remarks</th>
-      <th>Amount</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+	<thead>
+		<tr>
+			<th>Frequency</th>
+			<th>Currency</th>
+			<th>Remarks</th>
+			<th>Amount</th>
+			<th>User</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
 
-  <tbody>
-    <% @debits.each do |debit| %>
-      <tr>
-        <td><%= debit.frequency %></td>
-        <td><%= debit.currency %></td>
-        <td><%= debit.remarks %></td>
-        <td><%= debit.amount %></td>
-        <td><%= debit.user_id %></td>
-        <td><%= link_to 'Show', debit %></td>
-        <td><%= link_to 'Edit', edit_debit_path(debit) %></td>
-        <td><%= link_to 'Destroy', debit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+	<tbody>
+		<% @debits.each do |debit| %>
+			<tr>
+				<td><%= debit.frequency %></td>
+				<td><%= debit.currency %></td>
+				<td><%= debit.remarks %></td>
+				<td><%= debit.amount %></td>
+				<td><%= debit.user_id %></td>
+				<td><%= link_to 'Show', debit %></td>
+				<td><%= link_to 'Edit', edit_debit_path(debit) %></td>
+				<td><%= link_to 'Destroy', debit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+		<% end %>
+	</tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Debit', new_debit_path %>
+<%= link_to 'New Debit', new_user_debit_path %>
