@@ -1,3 +1,31 @@
 <% provide(:title, @user.name) %>
 
 <h1>Welcome, <%= @user.name %></h1>
+<hr />
+
+<div class="row">
+	<div class="col-md-12">
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Frequency</th>
+					<th>Date</th>
+					<th>Amount</th>
+					<th>Remarks</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @user.debits.each do |debit| %>
+					<tr>
+						<td><%= debit.id %></td>
+						<td><%= debit.frequency %></td>
+						<td><%= debit.created_at %></td>
+						<td><%= debit.amount %></td>
+						<td><%= debit.remarks %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
