@@ -1,9 +1,10 @@
 class DebitsController < ApplicationController
   before_action :set_debit, only: %i[ show edit update destroy ]
+  before_action :is_same_user?
 
   # GET /debits or /debits.json
   def index
-    @debits = Debit.all
+    @debits = Debit.where(user_id: current_user.id)
   end
 
   # GET /debits/1 or /debits/1.json
@@ -61,6 +62,9 @@ class DebitsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_debit
       @debit = Debit.find(params[:id])
+    end
+
+    def is_same_user?
     end
 
     # Only allow a list of trusted parameters through.
