@@ -1,6 +1,6 @@
 class DebitsController < ApplicationController
   before_action :set_debit, only: %i[ show edit update destroy ]
-  before_action :is_same_user?
+  before_action :is_same_user?, except: [:index, :new, :create]
 
   # GET /debits or /debits.json
   def index
@@ -65,6 +65,8 @@ class DebitsController < ApplicationController
     end
 
     def is_same_user?
+      @debit_user = @debit.user
+      redirect_to(root_url) unless current_user?(@debit_user)
     end
 
     # Only allow a list of trusted parameters through.

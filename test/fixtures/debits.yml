@@ -1,15 +1,43 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+tony_1:
   frequency: One Time
   currency: USD
   remarks: One Time
   amount: 9.99
   user: tony
 
-two:
+tony_2:
   frequency: One Time
-  currency: Euro
+  currency: USDS
   remarks: test
   amount: 9.99
   user: tony
+
+amy_1:
+  frequency: One Time
+  currency: USD
+  remarks: One Time
+  amount: 10.01
+  user: amy
+
+amy_2:
+  frequency: One Time
+  currency: USD
+  remarks: test
+  amount: 20.02
+  user: amy  
+
+john_1:
+  frequency: One Time
+  currency: USD
+  remarks: One Time
+  amount: 100.01
+  user: john
+
+john_2:
+  frequency: One Time
+  currency: USD
+  remarks: test
+  amount: 200.02
+  user: john    
