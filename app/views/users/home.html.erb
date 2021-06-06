@@ -17,7 +17,7 @@
 			<tbody>
 				<% @user.debits.each do |debit| %>
 					<tr>
-						<td><%= debit.id %></td>
+						<td><%= link_to debit.id, debit %></td>
 						<td><%= debit.created_at.strftime("%m/%d/%Y") %></td>
 						<td><%= debit.remarks %></td>
 						<td><%= number_to_currency(debit.amount, precision: 2) %></td>
