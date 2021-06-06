@@ -10,7 +10,7 @@ end
 
 users = User.all
 users.each do |user|
-  debit_count = Faker::Number.within(range: 1..10)
+  debit_count = Faker::Number.within(range: 11..90)
 
   debit_count.times do |n|
     amt = Faker::Number.decimal(l_digits: 2)
