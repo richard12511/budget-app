@@ -19,3 +19,8 @@ users.each do |user|
     user.debits.create!(frequency: "One time", currency: "USD", remarks: rmk, amount: amt)
   end
 end
+
+Category.create(name: "Bills", system: true)
+Category.create(name: "Entertainment", system: true)
+Category.create(name: "Food/Drink", system: true)
+Category.create(name: "Travel", system: true)
