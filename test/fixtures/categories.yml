@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bills:
+  category_name: bills
+  remarks: MyText
+  is_system: false
+  user: tony
+
+food:
+  category_name: food
+  remarks: MyText
+  is_system: false
+  user: Amy

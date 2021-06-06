@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_152442) do
+ActiveRecord::Schema.define(version: 2021_06_06_162453) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
+    t.text "remarks"
+    t.boolean "is_system"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
+  end
 
   create_table "debits", force: :cascade do |t|
     t.string "frequency"
@@ -33,5 +43,6 @@ ActiveRecord::Schema.define(version: 2021_06_04_152442) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "categories", "users"
   add_foreign_key "debits", "users"
 end
