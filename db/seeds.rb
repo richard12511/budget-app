@@ -22,10 +22,10 @@ end
 
 users = User.all
 users.each do |user|
-  debit_count = Faker::Number.within(range: 11..2500)
+  debit_count = Faker::Number.within(range: 11..25)
 
   debit_count.times do |n|
-    amt = Faker::Number.decimal(l_digits: 2)
+    amt = Faker::Number.decimal(l_digits: 3)
     rmk = Faker::ChuckNorris.fact
     catNum = Faker::Number.between(from: 1, to: 40)
     # Debit.create!(frequency: "One time", currency: "USD", remarks: rmk, amount: amt, user_id: user.id)
