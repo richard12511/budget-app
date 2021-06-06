@@ -17,7 +17,12 @@
 
 <p>
 	<strong>Amount:</strong>
-	<%= @debit.amount %>
+	<%= number_to_currency(@debit.amount, precision: 2) %>
+</p>
+
+<p>
+	<strong>Created at:</strong>
+	<%= @debit.created_at.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
