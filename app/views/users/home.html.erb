@@ -9,20 +9,18 @@
 			<thead>
 				<tr>
 					<th>Id</th>
-					<th>Frequency</th>
 					<th>Date</th>
-					<th>Amount</th>
 					<th>Remarks</th>
+					<th>Amount</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% @user.debits.each do |debit| %>
 					<tr>
 						<td><%= debit.id %></td>
-						<td><%= debit.frequency %></td>
-						<td><%= debit.created_at %></td>
-						<td><%= debit.amount %></td>
+						<td><%= debit.created_at.strftime("%m/%d/%Y") %></td>
 						<td><%= debit.remarks %></td>
+						<td><%= number_to_currency(debit.amount, precision: 2) %></td>
 					</tr>
 				<% end %>
 			</tbody>
