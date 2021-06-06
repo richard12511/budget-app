@@ -8,7 +8,6 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
   end
 
   test "index as admin including pagination and delete links" do
-    byebug
     login_as(@admin)
     get users_path
     assert_template 'users/index'
