@@ -16,6 +16,11 @@
 </p>
 
 <p>
+	<strong>Category:</strong>
+	<%= link_to @debit.category.category_name, @debit.category %>
+</p>
+
+<p>
 	<strong>Amount:</strong>
 	<%= number_to_currency(@debit.amount, precision: 2) %>
 </p>
