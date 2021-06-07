@@ -1,9 +1,38 @@
 <% provide(:title, 'Categories') %>
-<h1>Categories</h1>
+<h2>Categories</h2>
+<hr />
 
-<%= will_paginate %>
-<ul class="users">
-	<%= render @categories %>
-</ul>
+<div class="row">
+	<div class="col-md-12">
+		<table id="categories-table" class="table table-striped table-bordered table-condensed display compact table-hover">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Remarks</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @categories.each do |category| %>
+					<tr>
+						<td><%= link_to category.id, category %></td>
+						<td><%= category.category_name %></td>
+						<td><%= category.remarks %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
 
-<%= will_paginate %>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  $('#categories-table').DataTable({
+		  info: false,
+		  lengthChange: false,
+		  searching: false,
+		  order: [[0, "asc"]],
+		  pageLength: 10
+	  });
+	});
+</script>

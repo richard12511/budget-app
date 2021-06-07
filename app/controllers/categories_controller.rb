@@ -3,7 +3,8 @@ class CategoriesController < ApplicationController
   before_action :is_same_user?, except: [:index, :new, :create]
 
   def index
-    @categories = Category.paginate(page: params[:page])
+    # @categories = Category.paginate(page: params[:page])
+    @categories = Category.all
   end
 
   def new
