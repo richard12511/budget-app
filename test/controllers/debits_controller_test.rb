@@ -4,6 +4,7 @@ class DebitsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @debit = debits(:tony_1)
     @user = users(:tony)
+    @category = categories(:one)
   end
 
   test "should get index" do
@@ -21,7 +22,7 @@ class DebitsControllerTest < ActionDispatch::IntegrationTest
   test "should create debit" do
     login_as(@user)
     assert_difference('Debit.count') do
-      post debits_url, params: { debit: { amount: @debit.amount, currency: @debit.currency, frequency: @debit.frequency, remarks: @debit.remarks, user_id: @debit.user_id } }
+      post debits_url, params: { debit: { amount: @debit.amount, currency: @debit.currency, frequency: @debit.frequency, remarks: @debit.remarks, user_id: @debit.user_id, category_id: @category.id } }
     end
 
     assert_redirected_to debit_url(Debit.last)
@@ -41,7 +42,7 @@ class DebitsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update debit" do
     login_as(@user)
-    patch debit_url(@debit), params: { debit: { amount: @debit.amount, currency: @debit.currency, frequency: @debit.frequency, remarks: @debit.remarks, user_id: @debit.user_id } }
+    patch debit_url(@debit), params: { debit: { amount: @debit.amount, currency: @debit.currency, frequency: @debit.frequency, remarks: @debit.remarks, user_id: @debit.user_id, category_id: @category.id } }
     assert_redirected_to debit_url(@debit)
   end
 

@@ -2,25 +2,20 @@ class DebitsController < ApplicationController
   before_action :set_debit, only: %i[ show edit update destroy ]
   before_action :is_same_user?, except: [:index, :new, :create]
 
-  # GET /debits or /debits.json
   def index
     @debits = Debit.where(user_id: current_user.id)
   end
 
-  # GET /debits/1 or /debits/1.json
   def show
   end
 
-  # GET /debits/new
   def new
     @debit = Debit.new
   end
 
-  # GET /debits/1/edit
   def edit
   end
 
-  # POST /debits or /debits.json
   def create
     @debit = Debit.new(debit_params)
 
@@ -36,7 +31,6 @@ class DebitsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /debits/1 or /debits/1.json
   def update
     respond_to do |format|
       if @debit.update(debit_params)
@@ -49,7 +43,6 @@ class DebitsController < ApplicationController
     end
   end
 
-  # DELETE /debits/1 or /debits/1.json
   def destroy
     @debit.destroy
     respond_to do |format|
@@ -59,7 +52,6 @@ class DebitsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_debit
       @debit = Debit.find(params[:id])
     end
@@ -69,7 +61,6 @@ class DebitsController < ApplicationController
       redirect_to(root_url) unless current_user?(@debit_user)
     end
 
-    # Only allow a list of trusted parameters through.
     def debit_params
       params.require(:debit).permit(:frequency, :currency, :remarks, :amount, :user_id)
     end
