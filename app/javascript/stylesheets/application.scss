@@ -1,1 +1,15 @@
 @import "bootstrap";
+
+
+.dataTables_filter{
+    float: right;
+    margin-bottom: 10px;
+}
+
+.dataTables_paginate{
+    float: right;
+}
+
+.navbar-dark.bg-dark{
+    background-color: #009900 !important;
+}
