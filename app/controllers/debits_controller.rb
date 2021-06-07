@@ -54,6 +54,7 @@ class DebitsController < ApplicationController
   private
     def set_debit
       @debit = Debit.find(params[:id])
+      test = "test"
     end
 
     def is_same_user?
