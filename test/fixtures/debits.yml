@@ -6,7 +6,7 @@ tony_1:
   remarks: One Time
   amount: 9.99
   user: tony
-  category_id: <%= Category.last.id %>
+  category: bills
 
 tony_2:
   frequency: One Time
@@ -14,7 +14,7 @@ tony_2:
   remarks: test
   amount: 9.99
   user: tony
-  category_id: <%= Category.last.id %>
+  category: bills
 
 amy_1:
   frequency: One Time
@@ -22,7 +22,7 @@ amy_1:
   remarks: One Time
   amount: 10.01
   user: amy
-  category_id: <%= Category.last.id %>
+  category: bills
 
 amy_2:
   frequency: One Time
@@ -30,7 +30,7 @@ amy_2:
   remarks: test
   amount: 20.02
   user: amy  
-  category_id: <%= Category.last.id %>
+  category: bills
 
 john_1:
   frequency: One Time
@@ -38,7 +38,7 @@ john_1:
   remarks: One Time
   amount: 100.01
   user: john
-  category_id: <%= Category.last.id %>
+  category: bills
 
 john_2:
   frequency: One Time
@@ -46,4 +46,4 @@ john_2:
   remarks: test
   amount: 200.02
   user: john    
-  category_id: <%= Category.last.id %>
+  category: bills
