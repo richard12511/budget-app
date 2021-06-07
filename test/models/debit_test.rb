@@ -4,8 +4,8 @@ class DebitTest < ActiveSupport::TestCase
   
   def setup
     @user = users(:tony)
-
-    @debit = Debit.new(currency: "USD", frequency: "One Time", remarks: "test", amount: 9.99, user_id: @user.id )
+    @category = categories(:one)
+    @debit = Debit.new(currency: "USD", frequency: "One Time", remarks: "test", amount: 9.99, user_id: @user.id, category_id: @category.id )
   end
 
   test "should be valid" do
