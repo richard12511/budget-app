@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    has_many :debits
+    has_many :debits, dependent: :destroy
+    has_many :categories, dependent: :destroy
     
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

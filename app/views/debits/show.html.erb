@@ -16,8 +16,18 @@
 </p>
 
 <p>
+	<strong>Category:</strong>
+	<%= link_to @debit.category.category_name, @debit.category %>
+</p>
+
+<p>
 	<strong>Amount:</strong>
-	<%= @debit.amount %>
+	<%= number_to_currency(@debit.amount, precision: 2) %>
+</p>
+
+<p>
+	<strong>Created at:</strong>
+	<%= @debit.created_at.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
