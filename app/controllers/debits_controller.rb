@@ -6,6 +6,10 @@ class DebitsController < ApplicationController
     @debits = Debit.where(user_id: current_user.id)
   end
 
+  def index_all
+    @debits = Debit.all()
+  end
+
   def show
   end
 
@@ -60,6 +64,10 @@ class DebitsController < ApplicationController
     def is_same_user?
       @debit_user = @debit.user
       redirect_to(root_url) unless current_user?(@debit_user)
+    end
+
+    def is_admin?
+      redirect_to(root_url) unless current_user.is_admin?
     end
 
     def debit_params
